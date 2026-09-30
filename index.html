@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Enobra Construtora — construção residencial, reformas e execução de obras em Presidente Prudente e região." />
+  <title>Enobra Construtora | Construindo com qualidade</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#070c16;
+      --card:#0d1524;
+      --soft:#13213a;
+      --text:#f4f7fb;
+      --muted:#aeb8ca;
+      --accent:#233e8b;
+      --accent-2:#4f72df;
+      --accent-3:#7da3ff;
+      --line:rgba(120,148,235,.14);
+      --white:#fff;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:Manrope,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+    a{text-decoration:none;color:inherit}
+    img{max-width:100%;display:block}
+    .container{width:min(1160px,92%);margin:0 auto}
+    header{position:fixed;top:0;left:0;width:100%;z-index:1000;background:rgba(255,255,255,.96);backdrop-filter:blur(14px);border-bottom:1px solid rgba(20,38,77,.08);box-shadow:0 6px 18px rgba(7,12,22,.05)}
+    .nav{width:min(1320px,96%);height:84px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:flex;align-items:center;gap:14px;font-weight:800;letter-spacing:.5px}
+    .brand-logo{width:265px;max-width:48vw;object-fit:contain;filter:drop-shadow(0 0 6px rgba(79,114,223,.10))}
+    .brand small{display:block;color:var(--muted);font-size:11px;letter-spacing:1.8px;font-weight:600}
+    nav ul{display:flex;gap:24px;list-style:none;color:#14264d;font-size:14px;font-weight:700}
+    nav a:hover{color:var(--accent-3)}
+    .nav-cta{padding:11px 16px;border-radius:10px;background:#14264d;color:#fff;font-weight:800;font-size:14px;box-shadow:0 12px 24px rgba(20,38,77,.20)}
+    .hero{min-height:100vh;padding:140px 0 90px;display:grid;align-items:center;position:relative;overflow:hidden;background:
+      radial-gradient(circle at 80% 20%,rgba(79,114,223,.24),transparent 28%),
+      radial-gradient(circle at 20% 15%,rgba(35,62,139,.15),transparent 25%),
+      linear-gradient(120deg,#060912 0%,#09101d 55%,#12203a 100%)}
+    .hero:after{content:"";position:absolute;right:-8%;bottom:-22%;width:480px;height:480px;border:1px solid rgba(79,114,223,.18);border-radius:50%}
+    .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center}
+    .eyebrow{color:var(--accent-3);text-transform:uppercase;letter-spacing:2.8px;font-size:12px;font-weight:800;margin-bottom:18px}
+    h1{font-family:"Playfair Display",serif;font-size:clamp(48px,7vw,86px);line-height:.98;max-width:780px}
+    .hero p{font-size:18px;color:var(--muted);max-width:650px;margin:26px 0 34px}
+    .actions{display:flex;flex-wrap:wrap;gap:14px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 20px;border-radius:12px;font-weight:800;transition:.2s}
+    .btn-primary{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff;box-shadow:0 14px 28px rgba(35,62,139,.28)}.btn-primary:hover{transform:translateY(-2px);filter:brightness(1.06)}
+    .btn-outline{border:1px solid var(--line);background:rgba(255,255,255,.02)}.btn-outline:hover{border-color:rgba(79,114,223,.55)}
+    .hero-card{background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid var(--line);border-radius:24px;padding:28px;box-shadow:0 25px 80px rgba(0,0,0,.28), inset 0 0 0 1px rgba(79,114,223,.08)}
+    .hero-image{aspect-ratio:4/5;border-radius:18px;background:
+      linear-gradient(180deg,rgba(0,0,0,.05),rgba(0,0,0,.65)),
+      url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80') center/cover;display:flex;align-items:flex-end;padding:24px}
+    .hero-badge{background:rgba(10,12,14,.72);backdrop-filter:blur(10px);padding:16px 18px;border-radius:14px;border:1px solid var(--line);width:100%}
+    .hero-badge strong{display:block;font-size:24px;color:var(--accent-3)}
+    section{padding:92px 0}
+    .section-title{font-family:"Playfair Display",serif;font-size:clamp(34px,5vw,52px);line-height:1.08;margin-bottom:14px}
+    .section-sub{color:var(--muted);max-width:720px}
+    .services{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:38px}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px;transition:.2s}
+    .card:hover{transform:translateY(-4px);border-color:rgba(79,114,223,.35);box-shadow:0 14px 26px rgba(3,11,31,.28)}
+    .icon{width:44px;height:44px;border-radius:12px;background:rgba(79,114,223,.14);display:grid;place-items:center;color:var(--accent-3);font-weight:900;margin-bottom:18px}
+    .card h3{font-size:18px;margin-bottom:8px}.card p{color:var(--muted);font-size:14px}
+    .about{background:#0b111d}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+    .about-visual{min-height:420px;border-radius:22px;background:
+      linear-gradient(180deg,transparent,rgba(0,0,0,.65)),
+      url('https://images.unsplash.com/photo-1541976590-713941681591?auto=format&fit=crop&w=1200&q=80') center/cover;border:1px solid var(--line)}
+    .checks{margin-top:24px;display:grid;gap:12px}.check{display:flex;gap:12px;color:#dce7f6}.check span{color:var(--accent-3);font-weight:900}
+    .projects{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:38px}
+    .project{min-height:340px;border-radius:18px;overflow:hidden;position:relative;border:1px solid var(--line);background-size:cover;background-position:center}
+    .project:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 35%,rgba(0,0,0,.86))}
+    .project-copy{position:absolute;z-index:1;left:20px;right:20px;bottom:18px}
+    .project-copy h3{font-size:21px}.project-copy p{color:#c6ccd3;font-size:14px;margin-top:4px}
+    .p1{background-image:url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80')}
+    .p2{background-image:url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80')}
+    .p3{background-image:url('https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1200&q=80')}
+    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:44px}
+    .stat{padding:22px;border:1px solid var(--line);border-radius:16px;background:var(--card)}
+    .stat strong{display:block;font-size:30px;color:var(--accent-3)}.stat span{color:var(--muted);font-size:13px}
+    .contact{background:linear-gradient(120deg,#0d1524,#070c16)}
+    .contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px}
+    .contact-list{display:grid;gap:14px;margin-top:28px}.contact-item{padding:16px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.02)}
+    form{display:grid;gap:14px;background:var(--card);padding:24px;border-radius:18px;border:1px solid var(--line)}
+    input,textarea,select{width:100%;background:#0c1014;color:white;border:1px solid var(--line);border-radius:12px;padding:14px 15px;font:inherit;outline:none}
+    input:focus,textarea:focus,select:focus{border-color:rgba(79,114,223,.65);box-shadow:0 0 0 3px rgba(79,114,223,.12)}
+    textarea{min-height:120px;resize:vertical}
+    footer{padding:32px 0;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+    .footer-grid{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    .whatsapp{position:fixed;right:18px;bottom:18px;z-index:999;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:#25D366;color:white;font-size:28px;box-shadow:0 16px 35px rgba(0,0,0,.35)}
+    .mobile-toggle{display:none}
+    @media(max-width:900px){
+      nav ul{display:none}.nav-cta{display:none}.hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}.hero{padding-top:120px}.hero-card{max-width:620px}.services,.projects{grid-template-columns:1fr 1fr}.stats{grid-template-columns:1fr 1fr}
+    }
+    @media(max-width:620px){
+      .services,.projects{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.hero p{font-size:16px}.hero-card{padding:14px}.hero-image{aspect-ratio:4/5}.section-title{font-size:38px}.brand-logo{width:190px}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#inicio">
+        <img class="brand-logo" src="logo-enobra.png" alt="Enobra Construtora">
+      </a>
+      <nav>
+        <ul>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#obras">Obras</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+      <a class="nav-cta" href="https://wa.me/5518996822334?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20com%20a%20Enobra%20Construtora." target="_blank">Solicitar orçamento</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Construção • Reforma • Execução</div>
+          <h1>Construindo com qualidade.</h1>
+          <p>Da fundação ao acabamento, a Enobra transforma projetos em obras bem executadas, com organização, responsabilidade e atenção aos detalhes.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="https://wa.me/5518996822334?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20com%20a%20Enobra%20Construtora." target="_blank">Pedir orçamento no WhatsApp</a>
+            <a class="btn btn-outline" href="#obras">Ver nossas obras</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <div class="hero-image">
+            <div class="hero-badge">
+              <img src="logo-enobra.png" alt="Logo Enobra Construtora" style="width:180px;max-width:100%;margin-bottom:10px">
+              Presidente Prudente e região
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="servicos">
+      <div class="container">
+        <div class="eyebrow">O que fazemos</div>
+        <h2 class="section-title">Soluções para sua obra do início ao fim.</h2>
+        <p class="section-sub">Execução com foco em qualidade, produtividade e acompanhamento técnico em cada etapa.</p>
+        <div class="services">
+          <article class="card"><div class="icon">01</div><h3>Construção residencial</h3><p>Execução de casas, ampliações e novas edificações, com organização das etapas e acompanhamento da obra.</p></article>
+          <article class="card"><div class="icon">02</div><h3>Reformas e ampliações</h3><p>Readequação de ambientes, melhorias estruturais, ampliações e modernização de imóveis.</p></article>
+          <article class="card"><div class="icon">03</div><h3>Fundações e estrutura</h3><p>Serviços de fundação, baldrames, pilares, vigas, lajes e demais etapas estruturais.</p></article>
+          <article class="card"><div class="icon">04</div><h3>Alvenaria e revestimentos</h3><p>Execução de alvenaria, reboco, contrapiso, assentamento de pisos e revestimentos.</p></article>
+          <article class="card"><div class="icon">05</div><h3>Muros e contenções</h3><p>Construção de muros, muros de arrimo e soluções de contenção conforme necessidade da obra.</p></article>
+          <article class="card"><div class="icon">06</div><h3>Execução por projeto</h3><p>Execução conforme projeto arquitetônico e estrutural, com planejamento e acompanhamento de serviços.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="sobre">
+      <div class="container about-grid">
+        <div class="about-visual"></div>
+        <div>
+          <div class="eyebrow">Sobre a Enobra</div>
+          <h2 class="section-title">Obra bem feita começa com responsabilidade.</h2>
+          <p class="section-sub">A Enobra Construtora atua na execução de obras residenciais e serviços de construção civil, buscando entregar cada etapa com clareza, organização e padrão de qualidade.</p>
+          <div class="checks">
+            <div class="check"><span>✓</span> Acompanhamento próximo da execução</div>
+            <div class="check"><span>✓</span> Planejamento de etapas e serviços</div>
+            <div class="check"><span>✓</span> Comunicação direta com o cliente</div>
+            <div class="check"><span>✓</span> Atendimento em Presidente Prudente e região</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="obras">
+      <div class="container">
+        <div class="eyebrow">Portfólio</div>
+        <h2 class="section-title">Algumas das nossas entregas.</h2>
+        <p class="section-sub">Aqui você pode substituir as imagens abaixo pelas fotos reais das obras da Enobra.</p>
+        <div class="projects">
+          <article class="project p1"><div class="project-copy"><h3>Residencial Jatobá</h3><p>Residência executada e entregue em 9 meses.</p></div></article>
+          <article class="project p2"><div class="project-copy"><h3>Obras em andamento</h3><p>Execução estrutural, alvenaria e acompanhamento das etapas.</p></div></article>
+          <article class="project p3"><div class="project-copy"><h3>Construção residencial</h3><p>Projetos transformados em espaços prontos para viver.</p></div></article>
+        </div>
+        <div class="stats">
+          <div class="stat"><strong>9 meses</strong><span>Execução da obra Residencial Jatobá</span></div>
+          <div class="stat"><strong>100%</strong><span>Foco em execução e qualidade</span></div>
+          <div class="stat"><strong>Direto</strong><span>Contato próximo com o cliente</span></div>
+          <div class="stat"><strong>SP</strong><span>Presidente Prudente e região</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contato">
+      <div class="container contact-grid">
+        <div>
+          <div class="eyebrow">Fale com a Enobra</div>
+          <h2 class="section-title">Vamos tirar seu projeto do papel?</h2>
+          <p class="section-sub">Entre em contato para orçamento, visita técnica ou para conversar sobre sua obra.</p>
+          <div class="contact-list">
+            <div class="contact-item"><strong>WhatsApp 1</strong><br><span>(18) 99682-2334</span></div>
+            <div class="contact-item"><strong>WhatsApp 2</strong><br><span>(18) 99691-6874</span></div>
+            <div class="contact-item"><strong>E-mail</strong><br><span>construtoraenobra@gmail.com</span></div>
+          </div>
+        </div>
+        <form id="quoteForm">
+          <input id="nome" type="text" placeholder="Seu nome" required>
+          <input id="cidade" type="text" placeholder="Cidade da obra" required>
+          <select id="servico" required>
+            <option value="">Qual serviço você precisa?</option>
+            <option>Construção residencial</option>
+            <option>Reforma / ampliação</option>
+            <option>Fundação / estrutura</option>
+            <option>Muro / contenção</option>
+            <option>Outro serviço</option>
+          </select>
+          <textarea id="mensagem" placeholder="Conte um pouco sobre sua obra"></textarea>
+          <button class="btn btn-primary" type="submit" style="border:0;cursor:pointer">Enviar pelo WhatsApp</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <span>© <span id="year"></span> Enobra Construtora. Todos os direitos reservados.</span>
+      <span>Construindo com qualidade.</span>
+    </div>
+  </footer>
+
+  <a class="whatsapp" aria-label="Falar no WhatsApp" href="https://wa.me/5518996822334?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20com%20a%20Enobra%20Construtora." target="_blank">☏</a>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('quoteForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const nome = document.getElementById('nome').value;
+      const cidade = document.getElementById('cidade').value;
+      const servico = document.getElementById('servico').value;
+      const mensagem = document.getElementById('mensagem').value;
+      const texto = `Olá! Meu nome é ${nome}. Tenho interesse em ${servico}. A obra fica em ${cidade}. ${mensagem}`;
+      window.open('https://wa.me/5518996822334?text=' + encodeURIComponent(texto), '_blank');
+    });
+  </script>
+</body>
+</html>
